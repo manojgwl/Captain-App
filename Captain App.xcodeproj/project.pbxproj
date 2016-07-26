@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57548FE8DE72512138CDB2CC /* Pods_Captain_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6DDC4BE93B2399FE7F629A /* Pods_Captain_App.framework */; };
+		7EA6B9241D462109009E8430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9231D462109009E8430 /* AppDelegate.swift */; };
+		7EA6B9261D462109009E8430 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9251D462109009E8430 /* ViewController.swift */; };
+		7EA6B9291D462109009E8430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EA6B9271D462109009E8430 /* Main.storyboard */; };
+		7EA6B92C1D462109009E8430 /* Captain_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B92A1D462109009E8430 /* Captain_App.xcdatamodeld */; };
+		7EA6B92E1D462109009E8430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EA6B92D1D462109009E8430 /* Assets.xcassets */; };
+		7EA6B9311D462109009E8430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EA6B92F1D462109009E8430 /* LaunchScreen.storyboard */; };
+		7EA6B9421D462355009E8430 /* Datamodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9411D462355009E8430 /* Datamodel.swift */; };
+		7EA6B9461D46236E009E8430 /* ServerRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9441D46236E009E8430 /* ServerRequestController.swift */; };
+		7EA6B9471D46236E009E8430 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9451D46236E009E8430 /* Utility.swift */; };
+		7EA6B94F1D46240F009E8430 /* CaptainAppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B94E1D46240F009E8430 /* CaptainAppNavigationController.swift */; };
+		7EA6B95A1D46248F009E8430 /* CheckConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9571D46248F009E8430 /* CheckConnection.m */; };
+		7EA6B95B1D46248F009E8430 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9591D46248F009E8430 /* Reachability.m */; };
+		AF93B8411D46290F00B62F02 /* MyordersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93B8401D46290F00B62F02 /* MyordersViewController.swift */; };
+		AFB928AD1D470F4F005F6107 /* OrdersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB928AC1D470F4F005F6107 /* OrdersCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E54AE9C800A5770A91133EF /* Pods-Captain App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Captain App/Pods-Captain App.release.xcconfig"; sourceTree = "<group>"; };
+		7EA6B9201D462109009E8430 /* Captain App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Captain App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA6B9231D462109009E8430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7EA6B9251D462109009E8430 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7EA6B9281D462109009E8430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7EA6B92B1D462109009E8430 /* Captain_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Captain_App.xcdatamodel; sourceTree = "<group>"; };
+		7EA6B92D1D462109009E8430 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7EA6B9301D462109009E8430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7EA6B9321D462109009E8430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EA6B9381D462205009E8430 /* Captainheader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Captainheader.h; sourceTree = "<group>"; };
+		7EA6B9411D462355009E8430 /* Datamodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datamodel.swift; sourceTree = "<group>"; };
+		7EA6B9441D46236E009E8430 /* ServerRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequestController.swift; sourceTree = "<group>"; };
+		7EA6B9451D46236E009E8430 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		7EA6B94E1D46240F009E8430 /* CaptainAppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptainAppNavigationController.swift; sourceTree = "<group>"; };
+		7EA6B9561D46248F009E8430 /* CheckConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckConnection.h; sourceTree = "<group>"; };
+		7EA6B9571D46248F009E8430 /* CheckConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConnection.m; sourceTree = "<group>"; };
+		7EA6B9581D46248F009E8430 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		7EA6B9591D46248F009E8430 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		7EA6B95C1D46251F009E8430 /* Captain App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Captain App-Bridging-Header.h"; sourceTree = "<group>"; };
+		AD6DDC4BE93B2399FE7F629A /* Pods_Captain_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Captain_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF93B8401D46290F00B62F02 /* MyordersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyordersViewController.swift; sourceTree = "<group>"; };
+		AFB928AC1D470F4F005F6107 /* OrdersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersCell.swift; sourceTree = "<group>"; };
+		AFD0B207F8D10627D1DB5949 /* Pods-Captain App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Captain App/Pods-Captain App.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7EA6B91D1D462109009E8430 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57548FE8DE72512138CDB2CC /* Pods_Captain_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1402299A56AF9C231AD5B5BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD6DDC4BE93B2399FE7F629A /* Pods_Captain_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71F09651D742307F5886CEA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFD0B207F8D10627D1DB5949 /* Pods-Captain App.debug.xcconfig */,
+				0E54AE9C800A5770A91133EF /* Pods-Captain App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7EA6B9171D462109009E8430 = {
+			isa = PBXGroup;
+			children = (
+				7EA6B9221D462109009E8430 /* Captain App */,
+				7EA6B9211D462109009E8430 /* Products */,
+				71F09651D742307F5886CEA2 /* Pods */,
+				1402299A56AF9C231AD5B5BE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7EA6B9211D462109009E8430 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EA6B9201D462109009E8430 /* Captain App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EA6B9221D462109009E8430 /* Captain App */ = {
+			isa = PBXGroup;
+			children = (
+				7EA6B94D1D4623E8009E8430 /* Default Classes */,
+				7EA6B9491D46239D009E8430 /* UIBased Controllers */,
+				7EA6B9431D46235E009E8430 /* Utility */,
+				7EA6B9481D462380009E8430 /* Headers */,
+				7EA6B94A1D4623AD009E8430 /* Assets  */,
+			);
+			path = "Captain App";
+			sourceTree = "<group>";
+		};
+		7EA6B9401D46233A009E8430 /* Network Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7EA6B9561D46248F009E8430 /* CheckConnection.h */,
+				7EA6B9571D46248F009E8430 /* CheckConnection.m */,
+				7EA6B9581D46248F009E8430 /* Reachability.h */,
+				7EA6B9591D46248F009E8430 /* Reachability.m */,
+			);
+			name = "Network Utilities";
+			sourceTree = "<group>";
+		};
+		7EA6B9431D46235E009E8430 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7EA6B9401D46233A009E8430 /* Network Utilities */,
+				7EA6B9411D462355009E8430 /* Datamodel.swift */,
+				7EA6B9441D46236E009E8430 /* ServerRequestController.swift */,
+				7EA6B9451D46236E009E8430 /* Utility.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		7EA6B9481D462380009E8430 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				7EA6B95C1D46251F009E8430 /* Captain App-Bridging-Header.h */,
+				7EA6B9381D462205009E8430 /* Captainheader.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		7EA6B9491D46239D009E8430 /* UIBased Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFB928AB1D470F32005F6107 /* cells */,
+				7EA6B9251D462109009E8430 /* ViewController.swift */,
+				AF93B8401D46290F00B62F02 /* MyordersViewController.swift */,
+			);
+			name = "UIBased Controllers";
+			sourceTree = "<group>";
+		};
+		7EA6B94A1D4623AD009E8430 /* Assets  */ = {
+			isa = PBXGroup;
+			children = (
+				7EA6B9271D462109009E8430 /* Main.storyboard */,
+				7EA6B92D1D462109009E8430 /* Assets.xcassets */,
+				7EA6B92F1D462109009E8430 /* LaunchScreen.storyboard */,
+				7EA6B9321D462109009E8430 /* Info.plist */,
+				7EA6B92A1D462109009E8430 /* Captain_App.xcdatamodeld */,
+			);
+			name = "Assets ";
+			sourceTree = "<group>";
+		};
+		7EA6B94D1D4623E8009E8430 /* Default Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7EA6B9231D462109009E8430 /* AppDelegate.swift */,
+				7EA6B94E1D46240F009E8430 /* CaptainAppNavigationController.swift */,
+			);
+			name = "Default Classes";
+			sourceTree = "<group>";
+		};
+		AFB928AB1D470F32005F6107 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				AFB928AC1D470F4F005F6107 /* OrdersCell.swift */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7EA6B91F1D462109009E8430 /* Captain App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EA6B9351D462109009E8430 /* Build configuration list for PBXNativeTarget "Captain App" */;
+			buildPhases = (
+				64B90741A34D90985822A3B4 /* Check Pods Manifest.lock */,
+				7EA6B91C1D462109009E8430 /* Sources */,
+				7EA6B91D1D462109009E8430 /* Frameworks */,
+				7EA6B91E1D462109009E8430 /* Resources */,
+				6B4D54C36EABD8DC464D15D6 /* Embed Pods Frameworks */,
+				2A9CB7A5783E6C52E4F857C7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Captain App";
+			productName = "Captain App";
+			productReference = 7EA6B9201D462109009E8430 /* Captain App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7EA6B9181D462109009E8430 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = GoodworkLabs;
+				TargetAttributes = {
+					7EA6B91F1D462109009E8430 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 7EA6B91B1D462109009E8430 /* Build configuration list for PBXProject "Captain App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7EA6B9171D462109009E8430;
+			productRefGroup = 7EA6B9211D462109009E8430 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7EA6B91F1D462109009E8430 /* Captain App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7EA6B91E1D462109009E8430 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA6B9311D462109009E8430 /* LaunchScreen.storyboard in Resources */,
+				7EA6B92E1D462109009E8430 /* Assets.xcassets in Resources */,
+				7EA6B9291D462109009E8430 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A9CB7A5783E6C52E4F857C7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Captain App/Pods-Captain App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64B90741A34D90985822A3B4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6B4D54C36EABD8DC464D15D6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Captain App/Pods-Captain App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7EA6B91C1D462109009E8430 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA6B9261D462109009E8430 /* ViewController.swift in Sources */,
+				7EA6B9241D462109009E8430 /* AppDelegate.swift in Sources */,
+				AFB928AD1D470F4F005F6107 /* OrdersCell.swift in Sources */,
+				7EA6B95A1D46248F009E8430 /* CheckConnection.m in Sources */,
+				AF93B8411D46290F00B62F02 /* MyordersViewController.swift in Sources */,
+				7EA6B94F1D46240F009E8430 /* CaptainAppNavigationController.swift in Sources */,
+				7EA6B9421D462355009E8430 /* Datamodel.swift in Sources */,
+				7EA6B9471D46236E009E8430 /* Utility.swift in Sources */,
+				7EA6B9461D46236E009E8430 /* ServerRequestController.swift in Sources */,
+				7EA6B95B1D46248F009E8430 /* Reachability.m in Sources */,
+				7EA6B92C1D462109009E8430 /* Captain_App.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7EA6B9271D462109009E8430 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EA6B9281D462109009E8430 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7EA6B92F1D462109009E8430 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EA6B9301D462109009E8430 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7EA6B9331D462109009E8430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7EA6B9341D462109009E8430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7EA6B9361D462109009E8430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFD0B207F8D10627D1DB5949 /* Pods-Captain App.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Captain App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gwl.Captain-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Captain App/Captain App-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/\"/**";
+			};
+			name = Debug;
+		};
+		7EA6B9371D462109009E8430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E54AE9C800A5770A91133EF /* Pods-Captain App.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Captain App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gwl.Captain-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Captain App/Captain App-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/\"/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7EA6B91B1D462109009E8430 /* Build configuration list for PBXProject "Captain App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EA6B9331D462109009E8430 /* Debug */,
+				7EA6B9341D462109009E8430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EA6B9351D462109009E8430 /* Build configuration list for PBXNativeTarget "Captain App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EA6B9361D462109009E8430 /* Debug */,
+				7EA6B9371D462109009E8430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7EA6B92A1D462109009E8430 /* Captain_App.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7EA6B92B1D462109009E8430 /* Captain_App.xcdatamodel */,
+			);
+			currentVersion = 7EA6B92B1D462109009E8430 /* Captain_App.xcdatamodel */;
+			path = Captain_App.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7EA6B9181D462109009E8430 /* Project object */;
+}
