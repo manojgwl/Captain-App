@@ -22,6 +22,7 @@
 		7EA6B95B1D46248F009E8430 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9591D46248F009E8430 /* Reachability.m */; };
 		AF93B8411D46290F00B62F02 /* MyordersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93B8401D46290F00B62F02 /* MyordersViewController.swift */; };
 		AFB928AD1D470F4F005F6107 /* OrdersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB928AC1D470F4F005F6107 /* OrdersCell.swift */; };
+		AFB928AF1D477A05005F6107 /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB928AE1D477A05005F6107 /* ItemsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		AD6DDC4BE93B2399FE7F629A /* Pods_Captain_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Captain_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF93B8401D46290F00B62F02 /* MyordersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyordersViewController.swift; sourceTree = "<group>"; };
 		AFB928AC1D470F4F005F6107 /* OrdersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersCell.swift; sourceTree = "<group>"; };
+		AFB928AE1D477A05005F6107 /* ItemsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
 		AFD0B207F8D10627D1DB5949 /* Pods-Captain App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Captain App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Captain App/Pods-Captain App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				AFB928AC1D470F4F005F6107 /* OrdersCell.swift */,
+				AFB928AE1D477A05005F6107 /* ItemsCell.swift */,
 			);
 			name = cells;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				TargetAttributes = {
 					7EA6B91F1D462109009E8430 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8VULYJR2ER;
 					};
 				};
 			};
@@ -309,6 +313,7 @@
 				7EA6B94F1D46240F009E8430 /* CaptainAppNavigationController.swift in Sources */,
 				7EA6B9421D462355009E8430 /* Datamodel.swift in Sources */,
 				7EA6B9471D46236E009E8430 /* Utility.swift in Sources */,
+				AFB928AF1D477A05005F6107 /* ItemsCell.swift in Sources */,
 				7EA6B9461D46236E009E8430 /* ServerRequestController.swift in Sources */,
 				7EA6B95B1D46248F009E8430 /* Reachability.m in Sources */,
 				7EA6B92C1D462109009E8430 /* Captain_App.xcdatamodeld in Sources */,
@@ -355,7 +360,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Navaratan Mal (ZP4TRJU8YL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Navaratan Mal (ZP4TRJU8YL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -377,6 +383,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "c59dbae0-30ef-4eae-a356-15ac944d674c";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -400,7 +407,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Navaratan Mal (ZP4TRJU8YL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Navaratan Mal (ZP4TRJU8YL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -415,6 +423,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "c59dbae0-30ef-4eae-a356-15ac944d674c";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -425,11 +434,14 @@
 			baseConfigurationReference = AFD0B207F8D10627D1DB5949 /* Pods-Captain App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Navaratan Mal (ZP4TRJU8YL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Navaratan Mal (ZP4TRJU8YL)";
 				INFOPLIST_FILE = "Captain App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gwl.Captain-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.metalmann.vendor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c59dbae0-30ef-4eae-a356-15ac944d674c";
 				SWIFT_OBJC_BRIDGING_HEADER = "Captain App/Captain App-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/\"/**";
 			};
@@ -440,11 +452,14 @@
 			baseConfigurationReference = 0E54AE9C800A5770A91133EF /* Pods-Captain App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Navaratan Mal (ZP4TRJU8YL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Navaratan Mal (ZP4TRJU8YL)";
 				INFOPLIST_FILE = "Captain App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gwl.Captain-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.metalmann.vendor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c59dbae0-30ef-4eae-a356-15ac944d674c";
 				SWIFT_OBJC_BRIDGING_HEADER = "Captain App/Captain App-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/\"/**";
 			};

@@ -16,12 +16,33 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var waiterID: String!
     var arrayResponse:NSMutableArray!
+    var array = [-1]
 
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getOrders()
+        
+        if array.contains(1) {
+            print("We've got apples!")
+        } else {
+            print("No apples here – sorry!")
+        }
+       let r=["a":"b","b":"c"]
+        var a = ["x":r, "y":"d"]
+
+
+        var error : NSError?
+        
+        let jsonData = try! NSJSONSerialization.dataWithJSONObject(a, options: NSJSONWritingOptions.PrettyPrinted)
+        
+        let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
+        
+        print("masnfasd",jsonString)
+        
+        
+
         
     }
     
@@ -39,7 +60,9 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
+        if array.contains(section){
+          return  (arrayResponse.objectAtIndex(section).valueForKey("items")?.count)!
+        }
         return 0;
     }
     
@@ -50,8 +73,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! OrdersCell
-        cell.lblOrder?.text="mmam"
+        let cell = tableView.dequeueReusableCellWithIdentifier("Reuse", forIndexPath: indexPath) as! ItemsCell
 
         
         return cell
@@ -70,7 +92,53 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
    
     
     func buttonClicked(sender:UIButton)  {
-        print(sender.tag)
+        
+        if array.contains(sender.tag){
+            array.removeObjectsInArray([sender.tag])
+            var indexPathArray = [NSIndexPath]()
+            
+            let count=arrayResponse.objectAtIndex(sender.tag).valueForKey("items")?.count
+            for var i = 0; i < count; ++i {
+                let indexPath = NSIndexPath(forRow: i, inSection: sender.tag)
+                indexPathArray.append(indexPath)
+                
+            }
+            
+            self.tblData.deleteRowsAtIndexPaths(indexPathArray, withRowAnimation: UITableViewRowAnimation.Top)
+        }
+        else
+        {
+            array.append(sender.tag)
+            var indexPathArray = [NSIndexPath]()
+            
+            let count=arrayResponse.objectAtIndex(sender.tag).valueForKey("items")?.count
+            for var i = 0; i < count; ++i {
+                let indexPath = NSIndexPath(forRow: i, inSection: sender.tag)
+                indexPathArray.append(indexPath)
+                
+            }
+            
+            
+            self.tblData.insertRowsAtIndexPaths(indexPathArray, withRowAnimation: UITableViewRowAnimation.Top)
+        }
+        
+        
+        
+        
+        
+        
+        
+        //        ServerRequestController.sharedInstance.postRequestWithUrl([ "waiter_id":waiterID, "app_id":"446"], headers: [:], subUrl: GETORDER) { (response : NSDictionary?, error : NSError?) -> Void in
+        //                            if ((error) != nil) {
+        //                                print("Error logging you in!")
+        //                                Datamodel.sharedInstance.hidehud(self.view)
+        //
+        //                            } else {
+        //                                print("order response",response)
+        //                                Datamodel.sharedInstance.hidehud(self.view)
+        //                            }
+        //                        }
+        
     }
     
     // MARK:  api callas
@@ -115,16 +183,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             
             
-            //            ServerRequestController.sharedInstance.postRequestWithUrl([ "waiter_id":waiterID, "app_id":"446"], headers: [:], subUrl: GETORDER) { (response : NSDictionary?, error : NSError?) -> Void in
-            //                if ((error) != nil) {
-            //                    print("Error logging you in!")
-            //                    Datamodel.sharedInstance.hidehud(self.view)
-            //
-            //                } else {
-            //                    print("order response",response)
-            //                    Datamodel.sharedInstance.hidehud(self.view)
-            //                }
-            //            }
+            
         }
         
         
@@ -185,4 +244,18 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     
 
+}
+
+extension Array where Element: Equatable {
+    mutating func removeObject(object: Element) {
+        if let index = self.indexOf(object) {
+            self.removeAtIndex(index)
+        }
+    }
+    
+    mutating func removeObjectsInArray(array: [Element]) {
+        for object in array {
+            self.removeObject(object)
+        }
+    }
 }
