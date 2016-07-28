@@ -11,7 +11,15 @@ import UIKit
 class OrdersCell: UITableViewCell {
 
     @IBOutlet weak var lblOrder: UILabel?
+    @IBOutlet weak var lblTime: UILabel?
+
     @IBOutlet weak var btnUpdate: UIButton?
+    @IBOutlet weak var btnEDit: UIButton?
+    @IBOutlet weak var btnDelete: UIButton?
+
+
+    @IBOutlet weak var lblTableNo: UILabel?
+
 
     
     override func awakeFromNib() {

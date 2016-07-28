@@ -9,6 +9,15 @@
 import UIKit
 
 class ItemsCell: UITableViewCell {
+    @IBOutlet weak var lblFoodName: UILabel?
+    @IBOutlet weak var lblcount: UILabel?
+    @IBOutlet weak var btnPlus: UIButton?
+    @IBOutlet weak var btnMinus: UIButton?
+    @IBOutlet weak var lblorderType: UILabel?
+
+
+
+
 
     override func awakeFromNib() {
         super.awakeFromNib()

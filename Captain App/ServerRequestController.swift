@@ -40,7 +40,7 @@ class ServerRequestController: NSObject {
         print("parameters",parameters)
         print("url",baseUrl+subUrl)
         
-        Alamofire.request(.POST, baseUrl+subUrl, parameters: parameters , encoding: .JSON, headers: headers).responseJSON { responseObject in switch responseObject.result {
+        Alamofire.request(.POST, baseUrl+subUrl, parameters: parameters ).responseJSON { responseObject in switch responseObject.result {
             
         case .Success(let jsonObject) :
             onCompletion(jsonObject as? NSDictionary, nil)

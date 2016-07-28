@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
+        
+
+        
         // Override point for customization after application launch.
         return true
     }
@@ -115,9 +118,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         
-        var characterSet: NSCharacterSet = NSCharacterSet(charactersInString: "<>")
+        let characterSet: NSCharacterSet = NSCharacterSet(charactersInString: "<>")
         
-        var deviceTokenString: String = (deviceToken.description as NSString)
+        let deviceTokenString: String = (deviceToken.description as NSString)
             .stringByTrimmingCharactersInSet(characterSet)
             .stringByReplacingOccurrencesOfString( " ", withString: "") as String
         print(deviceTokenString)

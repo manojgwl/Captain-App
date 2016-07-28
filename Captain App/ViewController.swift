@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import Alamofire
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController,UITextFieldDelegate {
      
-    @IBOutlet weak var txtWaiterid: UITextField?
+    @IBOutlet var txtWaiterid: UITextField!
+    var currentFrame:CGRect!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.hidden=true
+        self.title="Captain App"
+        currentFrame=self.view.bounds
+        
+        self.txtWaiterid.delegate = self
+        
+        let placeholder = NSAttributedString(string: "Waiter ID", attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
+        self.txtWaiterid.attributedPlaceholder = placeholder;
+
+       // self.navigationController?.navigationBar.hidden=true
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -29,14 +41,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func actionOnLogin(sender: UIButton) {
-        
-        
+   
         if let text = self.txtWaiterid!.text where !text.isEmpty {
             
             if(Utility.isConnectionAvailableWithAlert(true, currentClass: self)){
                 Datamodel.sharedInstance.showhud(self.view)
                 
-                ServerRequestController.sharedInstance.postRequestWithUrl([ "waiter_id": (self.txtWaiterid?.text)!, "device_token": Utility.getDeviceToken()], headers: [:], subUrl: "/login") { (response : NSDictionary?, error : NSError?) -> Void in
+                ServerRequestController.sharedInstance.postRequestWithUrl([ "waiter_id": (self.txtWaiterid?.text)!, "device_token": Utility.getDeviceToken(),"device_type":"ios"], headers: [:], subUrl: "/login") { (response : NSDictionary?, error : NSError?) -> Void in
                     if ((error) != nil) {
                         
                         print("Error logging you in!")
@@ -50,9 +61,6 @@ class ViewController: UIViewController {
                             Utility.storeWaiterID((self.txtWaiterid?.text)!)
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let vc = storyboard.instantiateViewControllerWithIdentifier("MyordersViewController")
-                            
-                            // Alternative way to present the new view controller
-                            
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
                     }
@@ -64,6 +72,38 @@ class ViewController: UIViewController {
             Utility.showAlert(VALIDATE_WAITERID,currentClass: self)
         }
         
+
+        
+        
+        
+}
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            
+            self.view.frame=CGRectMake(self.currentFrame.origin.x, self.currentFrame.origin.y, self.currentFrame.size.width, self.currentFrame.size.height)
+        })
     }
+    
+    func textFieldDidBeginEditing(textField: UITextField){
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            
+            self.view.frame=CGRectMake(self.currentFrame.origin.x, self.currentFrame.origin.y-50, self.currentFrame.size.width, self.currentFrame.size.height)
+        })
+
+    }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            
+            self.view.frame=CGRectMake(self.currentFrame.origin.x, self.currentFrame.origin.y, self.currentFrame.size.width, self.currentFrame.size.height)
+        })
+        return true
+    }
+
+
 }
 
