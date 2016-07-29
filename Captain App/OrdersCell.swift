@@ -18,6 +18,7 @@ class OrdersCell: UITableViewCell {
     @IBOutlet weak var btnDelete: UIButton?
     @IBOutlet weak var viewBG: UIView?
 
+    @IBOutlet weak var btnStatus: UIButton?
 
 
     @IBOutlet weak var lblTableNo: UILabel?

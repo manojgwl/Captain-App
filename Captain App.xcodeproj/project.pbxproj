@@ -20,6 +20,8 @@
 		7EA6B94F1D46240F009E8430 /* CaptainAppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B94E1D46240F009E8430 /* CaptainAppNavigationController.swift */; };
 		7EA6B95A1D46248F009E8430 /* CheckConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9571D46248F009E8430 /* CheckConnection.m */; };
 		7EA6B95B1D46248F009E8430 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6B9591D46248F009E8430 /* Reachability.m */; };
+		AF0002EC1D4B57BB00798DAA /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0002EA1D4B579200798DAA /* OpenSans-Bold.ttf */; };
+		AF0002ED1D4B57C000798DAA /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0002EB1D4B579200798DAA /* OpenSans-Regular.ttf */; };
 		AF288CDE1D4A281F00F7FD23 /* Merriweather 300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF288CDC1D4A26E300F7FD23 /* Merriweather 300.ttf */; };
 		AF93B8411D46290F00B62F02 /* MyordersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF93B8401D46290F00B62F02 /* MyordersViewController.swift */; };
 		AFB928AD1D470F4F005F6107 /* OrdersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB928AC1D470F4F005F6107 /* OrdersCell.swift */; };
@@ -47,6 +49,8 @@
 		7EA6B9591D46248F009E8430 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		7EA6B95C1D46251F009E8430 /* Captain App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Captain App-Bridging-Header.h"; sourceTree = "<group>"; };
 		AD6DDC4BE93B2399FE7F629A /* Pods_Captain_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Captain_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF0002EA1D4B579200798DAA /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		AF0002EB1D4B579200798DAA /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		AF288CDC1D4A26E300F7FD23 /* Merriweather 300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather 300.ttf"; sourceTree = "<group>"; };
 		AF93B8401D46290F00B62F02 /* MyordersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyordersViewController.swift; sourceTree = "<group>"; };
 		AFB928AC1D470F4F005F6107 /* OrdersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersCell.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 		AF288CDB1D4A26CB00F7FD23 /* Custom Font */ = {
 			isa = PBXGroup;
 			children = (
+				AF0002EA1D4B579200798DAA /* OpenSans-Bold.ttf */,
+				AF0002EB1D4B579200798DAA /* OpenSans-Regular.ttf */,
 				AF288CDC1D4A26E300F7FD23 /* Merriweather 300.ttf */,
 			);
 			name = "Custom Font";
@@ -255,6 +261,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF0002ED1D4B57C000798DAA /* OpenSans-Regular.ttf in Resources */,
+				AF0002EC1D4B57BB00798DAA /* OpenSans-Bold.ttf in Resources */,
 				AF288CDE1D4A281F00F7FD23 /* Merriweather 300.ttf in Resources */,
 				7EA6B9311D462109009E8430 /* LaunchScreen.storyboard in Resources */,
 				7EA6B92E1D462109009E8430 /* Assets.xcassets in Resources */,

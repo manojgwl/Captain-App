@@ -14,12 +14,16 @@
             <string>Merriweather-Light</string>
             <string>Merriweather-Light</string>
             <string>Merriweather-Light</string>
-            <string>Merriweather-Light</string>
-            <string>Merriweather-Light</string>
-            <string>Merriweather-Light</string>
-            <string>Merriweather-Light</string>
-            <string>Merriweather-Light</string>
-            <string>Merriweather-Light</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -147,7 +151,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.10980392160000001" green="0.20000000000000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="znk-cG-q3f" customClass="OrdersCell" customModule="Captain_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="znk-cG-q3f" customClass="OrdersCell" customModule="Captain_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="znk-cG-q3f" id="TRb-NS-DjG">
@@ -165,8 +169,8 @@
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulx-Qa-YOA">
-                                                            <rect key="frame" x="8" y="16" width="97" height="18"/>
-                                                            <fontDescription key="fontDescription" name="Merriweather-Light" family="Merriweather" pointSize="14"/>
+                                                            <rect key="frame" x="21" y="16" width="79" height="18"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -179,7 +183,7 @@
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hw-Sy-2KS">
                                                             <rect key="frame" x="220" y="16" width="84" height="18"/>
-                                                            <fontDescription key="fontDescription" name="Merriweather-Light" family="Merriweather" pointSize="11"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="11"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -193,16 +197,24 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQb-E7-nAF">
                                                             <rect key="frame" x="8" y="47" width="83" height="30"/>
                                                             <fontDescription key="fontDescription" name="Merriweather-Light" family="Merriweather" pointSize="14"/>
-                                                            <state key="normal" title="view">
+                                                            <state key="normal" title="View">
                                                                 <color key="titleColor" red="0.78823529410000004" green="0.69019607839999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qia-yu-COr">
                                                             <rect key="frame" x="113" y="16" width="83" height="18"/>
-                                                            <fontDescription key="fontDescription" name="Merriweather-Light" family="Merriweather" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1l5-0P-sVE">
+                                                            <rect key="frame" x="6" y="19.5" width="10" height="10"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.93460296350000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="10" id="6MS-jf-3h9"/>
+                                                                <constraint firstAttribute="width" constant="10" id="xUT-Fe-Mdk"/>
+                                                            </constraints>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -210,23 +222,26 @@
                                                         <constraint firstAttribute="trailing" secondItem="3Hw-Sy-2KS" secondAttribute="trailing" constant="6" id="3Ou-3p-OCp"/>
                                                         <constraint firstItem="qia-yu-COr" firstAttribute="width" secondItem="3Hw-Sy-2KS" secondAttribute="width" constant="-1" id="7J5-Hr-NqC"/>
                                                         <constraint firstItem="dQb-E7-nAF" firstAttribute="height" secondItem="7Ad-Sy-u9F" secondAttribute="height" id="AQ6-sW-E83"/>
+                                                        <constraint firstItem="Xnk-19-ywp" firstAttribute="top" secondItem="1l5-0P-sVE" secondAttribute="bottom" constant="12.5" id="BnI-G0-eKn"/>
                                                         <constraint firstItem="qia-yu-COr" firstAttribute="height" secondItem="3Hw-Sy-2KS" secondAttribute="height" id="Ci3-x9-lS5"/>
                                                         <constraint firstAttribute="trailing" secondItem="uM3-DF-9fC" secondAttribute="trailing" constant="6" id="Dyb-Is-U19"/>
                                                         <constraint firstAttribute="bottom" secondItem="7Ad-Sy-u9F" secondAttribute="bottom" constant="8" id="Ev9-yP-PFV"/>
                                                         <constraint firstAttribute="trailing" secondItem="Xnk-19-ywp" secondAttribute="trailing" id="G7c-P5-BaT"/>
                                                         <constraint firstItem="Xnk-19-ywp" firstAttribute="leading" secondItem="Ztu-sh-VWh" secondAttribute="leading" id="KTK-Ov-DDx"/>
                                                         <constraint firstItem="7Ad-Sy-u9F" firstAttribute="width" secondItem="uM3-DF-9fC" secondAttribute="width" id="MM2-DW-0Tv"/>
-                                                        <constraint firstItem="ulx-Qa-YOA" firstAttribute="width" secondItem="qia-yu-COr" secondAttribute="width" constant="14" id="R1G-Dc-ssl"/>
+                                                        <constraint firstItem="ulx-Qa-YOA" firstAttribute="width" secondItem="qia-yu-COr" secondAttribute="width" constant="-4" id="R1G-Dc-ssl"/>
                                                         <constraint firstItem="dQb-E7-nAF" firstAttribute="width" secondItem="7Ad-Sy-u9F" secondAttribute="width" id="VeD-Td-y57"/>
+                                                        <constraint firstItem="1l5-0P-sVE" firstAttribute="leading" secondItem="Ztu-sh-VWh" secondAttribute="leading" constant="6" id="djP-LD-o2H"/>
                                                         <constraint firstItem="7Ad-Sy-u9F" firstAttribute="height" secondItem="uM3-DF-9fC" secondAttribute="height" id="dyl-ca-aWC"/>
                                                         <constraint firstAttribute="bottom" secondItem="uM3-DF-9fC" secondAttribute="bottom" constant="8" id="g1O-Yj-mop"/>
                                                         <constraint firstItem="uM3-DF-9fC" firstAttribute="leading" secondItem="7Ad-Sy-u9F" secondAttribute="trailing" constant="25" id="h8d-da-fBo"/>
                                                         <constraint firstItem="dQb-E7-nAF" firstAttribute="top" secondItem="Xnk-19-ywp" secondAttribute="bottom" constant="4" id="hBu-vb-f2L"/>
                                                         <constraint firstItem="qia-yu-COr" firstAttribute="top" secondItem="Ztu-sh-VWh" secondAttribute="top" constant="16" id="iXn-OT-Gvf"/>
+                                                        <constraint firstItem="1l5-0P-sVE" firstAttribute="top" secondItem="Ztu-sh-VWh" secondAttribute="top" constant="19.5" id="igi-yg-kOm"/>
                                                         <constraint firstItem="3Hw-Sy-2KS" firstAttribute="top" secondItem="Ztu-sh-VWh" secondAttribute="top" constant="16" id="k32-se-eEr"/>
                                                         <constraint firstItem="dQb-E7-nAF" firstAttribute="leading" secondItem="Ztu-sh-VWh" secondAttribute="leading" constant="8" id="lW8-7W-0eU"/>
-                                                        <constraint firstItem="ulx-Qa-YOA" firstAttribute="leading" secondItem="Ztu-sh-VWh" secondAttribute="leading" constant="8" id="mzu-oz-ZBe"/>
-                                                        <constraint firstItem="qia-yu-COr" firstAttribute="leading" secondItem="ulx-Qa-YOA" secondAttribute="trailing" constant="8" id="ngr-Cx-vsm"/>
+                                                        <constraint firstItem="ulx-Qa-YOA" firstAttribute="leading" secondItem="Ztu-sh-VWh" secondAttribute="leading" constant="21" id="mzu-oz-ZBe"/>
+                                                        <constraint firstItem="qia-yu-COr" firstAttribute="leading" secondItem="ulx-Qa-YOA" secondAttribute="trailing" constant="13" id="ngr-Cx-vsm"/>
                                                         <constraint firstItem="Xnk-19-ywp" firstAttribute="top" secondItem="qia-yu-COr" secondAttribute="bottom" constant="8" id="pT8-cv-98A"/>
                                                         <constraint firstItem="ulx-Qa-YOA" firstAttribute="height" secondItem="qia-yu-COr" secondAttribute="height" id="sFF-Ew-bbp"/>
                                                         <constraint firstItem="ulx-Qa-YOA" firstAttribute="top" secondItem="Ztu-sh-VWh" secondAttribute="top" constant="16" id="sTu-mv-dC1"/>
@@ -253,6 +268,7 @@
                                         <connections>
                                             <outlet property="btnDelete" destination="uM3-DF-9fC" id="ytb-08-SGX"/>
                                             <outlet property="btnEDit" destination="7Ad-Sy-u9F" id="rdK-nO-ALW"/>
+                                            <outlet property="btnStatus" destination="1l5-0P-sVE" id="Mt5-uI-nCb"/>
                                             <outlet property="btnUpdate" destination="dQb-E7-nAF" id="VMt-za-Mbu"/>
                                             <outlet property="lblOrder" destination="qia-yu-COr" id="vVg-1Q-w5g"/>
                                             <outlet property="lblTableNo" destination="ulx-Qa-YOA" id="32f-ph-weu"/>
@@ -280,7 +296,7 @@
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7W-bI-DdZ">
                                                             <rect key="frame" x="10" y="26" width="144" height="21"/>
-                                                            <fontDescription key="fontDescription" name="Merriweather-Light" family="Merriweather" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -298,7 +314,7 @@
                                                                 <constraint firstAttribute="width" constant="144" id="2mh-h6-CJ3"/>
                                                                 <constraint firstAttribute="height" constant="21" id="3vo-jD-iBd"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Merriweather-Light" family="Merriweather" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -311,7 +327,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="27" id="c2i-FT-u1Y"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Merriweather-Light" family="Merriweather" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>

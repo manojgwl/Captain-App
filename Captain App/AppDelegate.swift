@@ -136,8 +136,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        if (application.applicationState == .Active) {
+            let nc = NSNotificationCenter.defaultCenter()
+            nc.postNotificationName("getOrder", object: nil)
+        }
+    
+    }
+    
+    
     func  getDeviceToken() -> String {
         return self.deviceToken!
+        
+        
     }
     
     

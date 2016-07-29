@@ -29,7 +29,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
 
         
-       
+
         let logout = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: #selector(logoutTapped))
         let coloor = Utility.hexStringToUIColor("#C9B059")
         
@@ -49,12 +49,17 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
         
         navigationItem.rightBarButtonItems = [logout]
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.addObserver(self, selector: #selector(refreshOrders), name: "getOrder", object: nil)
+
         
 
         
     }
     
-    
+    func refreshOrders()   {
+      self.getOrders()
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -103,6 +108,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Reuse", forIndexPath: indexPath) as! ItemsCell
+
         cell.lblFoodName?.text=arrayResponse.objectAtIndex(indexPath.section).valueForKey("items")?.objectAtIndex(indexPath.row).valueForKey("FOOD_ITEM_NAME")as? String
         cell.lblcount?.text=arrayResponse.objectAtIndex(indexPath.section).valueForKey("items")?.objectAtIndex(indexPath.row).valueForKey("FOOD_QUANTITY")as? String
         
@@ -125,13 +131,10 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         else{
             cell.lblorderType?.hidden=false
-            
         }
         
       cell.selectionStyle = .None
-        
-        cell.btnMinus!.addTarget(self, action:#selector(self.minusClicked(_:)), forControlEvents: .TouchUpInside)
-        
+     cell.btnMinus!.addTarget(self, action:#selector(self.minusClicked(_:)), forControlEvents: .TouchUpInside)
         return cell
     }
     
@@ -158,7 +161,8 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         headerCell.lblTime?.text=date24 as String
         
         headerCell.lblTableNo?.text = String(format:"Table %@", arrayResponse.objectAtIndex(section).valueForKey("TABLE_ID")as! String)
-        
+        headerCell.btnStatus!.layer.cornerRadius = (headerCell.btnStatus?.frame.size.width)!/2
+        headerCell.btnStatus!.clipsToBounds = true
         
         headerCell.lblOrder?.text=arrayResponse.objectAtIndex(section).valueForKey("CAPTAINAPP_STATUS")as? String
         
@@ -167,26 +171,13 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
            headerCell.btnDelete?.userInteractionEnabled=false
            headerCell.btnDelete?.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
            headerCell.btnEDit?.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
- 
- 
-            
+           headerCell.btnStatus?.backgroundColor=UIColor.yellowColor()
         }
 
         headerCell.viewBG!.layer.cornerRadius = 3.0
-        
-        
-
-        
-      // headerCell.contentView.backgroundColor = UIColor.redColor()
-
-        
-        
+ 
         return headerCell.contentView
     }
-    
-    
-    
-   
 
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.0
@@ -197,10 +188,8 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         view.backgroundColor = UIColor.greenColor()
         return view
     }
-
    
     func deleteClicked(sender:UIButton)  {
-        
         
         let alertController = UIAlertController(title: "Captain App", message: "Are you sure ?", preferredStyle: .Alert)
         
@@ -332,7 +321,6 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
         }
         
-        
     }
     func buttonClicked(sender:UIButton)  {
         
@@ -413,33 +401,23 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
                         self.tblData.delegate = self
                         self.tblData.dataSource = self
                         self.tblData.reloadData()
-                      // self.deleteOrder("710")
                         
-                        //self.logout()
                     }
-                    
                     else{
                         self.arrayResponse.removeAllObjects()
                         self.tblData.delegate = self
                         self.tblData.dataSource = self
                         self.tblData.reloadData()
                     }
-                    //self.logout()
 
-                    
-                    
-                    
-                    
-                    
+  
                 case .Failure(let error):
                     Datamodel.sharedInstance.hidehud(self.view)
 
                     print("Request failed with error: \(error)")
                     }
             }
-  
         }
-        
     }
     
     
@@ -470,10 +448,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     
                     }
             }
-            
-
-            
-            
+     
             }
         }
    // }
