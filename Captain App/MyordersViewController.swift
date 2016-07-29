@@ -24,7 +24,8 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         super.viewDidLoad()
         navigationItem.hidesBackButton=true
         self.getOrders()
-        self.title="My orders"
+        self.title="RESTAURANT CAPTAIN"
+        self.automaticallyAdjustsScrollViewInsets=false
         
 
         
@@ -32,13 +33,19 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let logout = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: #selector(logoutTapped))
         let coloor = Utility.hexStringToUIColor("#C9B059")
         
-        if let font = UIFont (name: "Merriweather", size: 20) {
+        self.view.backgroundColor=Utility.hexStringToUIColor("#1c333d")
+        
+        if let font = UIFont (name: "Merriweather", size: 18) {
             //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font,NSForegroundColorAttributeName: UIColor.whiteColor()]
             
             logout.setTitleTextAttributes([NSFontAttributeName: font,NSForegroundColorAttributeName:coloor], forState: .Normal)
 
             
         }
+        
+        let view = UIView.init(frame: CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height))
+        view.backgroundColor = Utility.hexStringToUIColor("#1c333d")
+        self.tblData.backgroundView = view
 
         
         navigationItem.rightBarButtonItems = [logout]
@@ -55,7 +62,24 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     func logoutTapped()  {
-        self.logout()    }
+        
+        
+        let alertController = UIAlertController(title: "Captain App", message: "Are you sure ?", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "Logout", style: .Default) { (action:UIAlertAction!) in
+            if(Utility.isConnectionAvailableWithAlert(true, currentClass: self)){
+               self.logout()
+                
+            }
+        }
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true, completion:nil)
+            }
     
     // MARK:  UITableViewDelegate Methods
 
@@ -72,7 +96,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        return 75;
+        return 90;
     }
     
     
@@ -104,7 +128,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
         }
         
-
+      cell.selectionStyle = .None
         
         cell.btnMinus!.addTarget(self, action:#selector(self.minusClicked(_:)), forControlEvents: .TouchUpInside)
         
@@ -123,7 +147,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         headerCell.btnDelete?.tag=section
         headerCell.btnUpdate?.tag=section
         headerCell.btnEDit?.tag=section
-        headerCell.contentView.backgroundColor=UIColor.whiteColor()
+       // headerCell.contentView.backgroundColor=UIColor.whiteColor()
         
         let dateAsString = arrayResponse.objectAtIndex(section).valueForKey("ORDERS_TIME")as! String
         let dateFormatter = NSDateFormatter()
@@ -135,13 +159,66 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         headerCell.lblTableNo?.text = String(format:"Table %@", arrayResponse.objectAtIndex(section).valueForKey("TABLE_ID")as! String)
         
+        
         headerCell.lblOrder?.text=arrayResponse.objectAtIndex(section).valueForKey("CAPTAINAPP_STATUS")as? String
+        
+        if(arrayResponse.objectAtIndex(section).valueForKey("CAPTAINAPP_STATUS")as? String == "Confirmed"){
+           headerCell.btnEDit?.userInteractionEnabled=false
+           headerCell.btnDelete?.userInteractionEnabled=false
+           headerCell.btnDelete?.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+           headerCell.btnEDit?.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+ 
+ 
+            
+        }
+
+        headerCell.viewBG!.layer.cornerRadius = 3.0
+        
+        
+
+        
+      // headerCell.contentView.backgroundColor = UIColor.redColor()
+
+        
+        
         return headerCell.contentView
     }
     
+    
+    
+   
+
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+   
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView.init(frame: CGRectMake(0, 0, tableView.frame.size.width, 0.1))
+        view.backgroundColor = UIColor.greenColor()
+        return view
+    }
+
    
     func deleteClicked(sender:UIButton)  {
-        self.deleteOrder(arrayResponse.objectAtIndex(sender.tag).valueForKey("ORDERS_ID")as! String)
+        
+        
+        let alertController = UIAlertController(title: "Captain App", message: "Are you sure ?", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "Delete", style: .Default) { (action:UIAlertAction!) in
+            if(Utility.isConnectionAvailableWithAlert(true, currentClass: self)){
+                self.deleteOrder(self.arrayResponse.objectAtIndex(sender.tag).valueForKey("ORDERS_ID")as! String)
+                
+            }
+        }
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true, completion:nil)
+        
+       
     }
     func plusClicked(sender:UIButton)  {
         print(sender.tag)
@@ -226,37 +303,42 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func editClicked(sender:UIButton)  {
-        var dic:NSDictionary=NSDictionary()
-        dic=arrayResponse.objectAtIndex(sender.tag) as! NSDictionary
-        let foundationDictionary = NSMutableDictionary(dictionary: dic)
-        foundationDictionary.setValue("Confirmed", forKey: "ORDERS_STATUS")
-        foundationDictionary.setValue(arrayResponse.objectAtIndex(sender.tag).valueForKey("ORDERS_TIME")as! String, forKey: "ORDERS_CONFIRMATION_TIME")
-        let _ : NSError?
-        let jsonData = try! NSJSONSerialization.dataWithJSONObject(foundationDictionary, options: NSJSONWritingOptions.PrettyPrinted)
         
-        let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
-        
-        Alamofire.request(.POST, "http://apps.goodworklabs.com/customer/updateorderstatus", parameters: ["order_str":jsonString])
-            .responseJSON { response in switch response.result {
-            case .Success(let JSON):
-                Datamodel.sharedInstance.hidehud(self.view)
-                
-                let response = JSON as! NSDictionary
-                
-                if(response.valueForKey("status")as! NSString == "1"){
-                    self.getOrders()
+        if(Utility.isConnectionAvailableWithAlert(true, currentClass: self)){
+            var dic:NSDictionary=NSDictionary()
+            dic=arrayResponse.objectAtIndex(sender.tag) as! NSDictionary
+            let foundationDictionary = NSMutableDictionary(dictionary: dic)
+            foundationDictionary.setValue("Confirmed", forKey: "ORDERS_STATUS")
+            foundationDictionary.setValue(arrayResponse.objectAtIndex(sender.tag).valueForKey("ORDERS_TIME")as! String, forKey: "ORDERS_CONFIRMATION_TIME")
+            let _ : NSError?
+            let jsonData = try! NSJSONSerialization.dataWithJSONObject(foundationDictionary, options: NSJSONWritingOptions.PrettyPrinted)
+            
+            let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
+            
+            Alamofire.request(.POST, "http://apps.goodworklabs.com/customer/updateorderstatus", parameters: ["order_str":jsonString])
+                .responseJSON { response in switch response.result {
+                case .Success(let JSON):
+                    Datamodel.sharedInstance.hidehud(self.view)
                     
-                }
-            case .Failure( _):
-                Datamodel.sharedInstance.hidehud(self.view)
-                }
+                    let response = JSON as! NSDictionary
+                    
+                    if(response.valueForKey("status")as! NSString == "1"){
+                        self.getOrders()
+                        
+                    }
+                case .Failure( _):
+                    Datamodel.sharedInstance.hidehud(self.view)
+                    }
+            }
         }
+        
         
     }
     func buttonClicked(sender:UIButton)  {
         
         if array.contains(sender.tag){
             array.removeObjectsInArray([sender.tag])
+            //array.removeAll()
             var indexPathArray = [NSIndexPath]()
             
             let count=arrayResponse.objectAtIndex(sender.tag).valueForKey("items")?.count
@@ -270,6 +352,27 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         else
         {
+            
+            if(array.count>1){
+                
+                
+                var indexPathArray = [NSIndexPath]()
+                let myNewName = NSMutableArray(array:array)
+                let object=myNewName.lastObject as! Int
+
+                let count=arrayResponse.objectAtIndex(object).valueForKey("items")?.count
+                for var i = 0; i < count; i += 1 {
+                    let indexPath = NSIndexPath(forRow: i, inSection: object)
+                    indexPathArray.append(indexPath)
+                    
+                }
+                
+                array.removeAll()
+                array.append(-1)
+
+                self.tblData.deleteRowsAtIndexPaths(indexPathArray, withRowAnimation: UITableViewRowAnimation.Top)
+                
+            }
             array.append(sender.tag)
             var indexPathArray = [NSIndexPath]()
             

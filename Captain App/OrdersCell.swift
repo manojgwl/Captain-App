@@ -16,14 +16,17 @@ class OrdersCell: UITableViewCell {
     @IBOutlet weak var btnUpdate: UIButton?
     @IBOutlet weak var btnEDit: UIButton?
     @IBOutlet weak var btnDelete: UIButton?
+    @IBOutlet weak var viewBG: UIView?
+
 
 
     @IBOutlet weak var lblTableNo: UILabel?
 
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 

@@ -18,7 +18,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="Captain App"
+        self.title="RESTAURANT CAPTAIN"
         currentFrame=self.view.bounds
         
         self.txtWaiterid.delegate = self
@@ -61,6 +61,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
                             Utility.storeWaiterID((self.txtWaiterid?.text)!)
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let vc = storyboard.instantiateViewControllerWithIdentifier("MyordersViewController")
+                            self.textFieldShouldReturn(self.txtWaiterid)
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
                     }
@@ -80,7 +81,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
             
             self.view.frame=CGRectMake(self.currentFrame.origin.x, self.currentFrame.origin.y, self.currentFrame.size.width, self.currentFrame.size.height)
         })

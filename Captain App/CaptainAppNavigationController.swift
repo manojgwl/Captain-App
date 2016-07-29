@@ -19,7 +19,7 @@ class CaptainAppNavigationController: UINavigationController {
       //  self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Merriweather-Light", size: 34)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         
-        if let font = UIFont (name: "Merriweather", size: 20) {
+        if let font = UIFont (name: "Merriweather", size: 15) {
             UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font,NSForegroundColorAttributeName: UIColor.whiteColor()]
         }
 
