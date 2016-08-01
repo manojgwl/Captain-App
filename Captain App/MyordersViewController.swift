@@ -95,6 +95,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if array.contains(section){
+            
           return  (arrayResponse.objectAtIndex(section).valueForKey("items")?.count)!
         }
         return 0;
@@ -144,6 +145,8 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let  headerCell = tableView.dequeueReusableCellWithIdentifier("cell") as! OrdersCell
+        headerCell.btnUpdate!.setTitle("View", forState: UIControlState.Normal)
+
         headerCell.btnUpdate!.addTarget(self, action:#selector(self.buttonClicked(_:)), forControlEvents: .TouchUpInside)
         headerCell.btnDelete!.addTarget(self, action:#selector(self.deleteClicked(_:)), forControlEvents: .TouchUpInside)
         headerCell.btnEDit!.addTarget(self, action:#selector(self.editClicked(_:)), forControlEvents: .TouchUpInside)
@@ -166,6 +169,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         headerCell.lblOrder?.text=arrayResponse.objectAtIndex(section).valueForKey("CAPTAINAPP_STATUS")as? String
         
+        
         if(arrayResponse.objectAtIndex(section).valueForKey("CAPTAINAPP_STATUS")as? String == "Confirmed"){
            headerCell.btnEDit?.userInteractionEnabled=false
            headerCell.btnDelete?.userInteractionEnabled=false
@@ -175,6 +179,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
 
         headerCell.viewBG!.layer.cornerRadius = 3.0
+        
  
         return headerCell.contentView
     }
@@ -325,6 +330,8 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func buttonClicked(sender:UIButton)  {
         
         if array.contains(sender.tag){
+            
+            sender.setTitle("View", forState: UIControlState.Normal)
             array.removeObjectsInArray([sender.tag])
             //array.removeAll()
             var indexPathArray = [NSIndexPath]()
@@ -352,15 +359,27 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 for var i = 0; i < count; i += 1 {
                     let indexPath = NSIndexPath(forRow: i, inSection: object)
                     indexPathArray.append(indexPath)
+                 
+                    
+
                     
                 }
                 
+     
+                
                 array.removeAll()
                 array.append(-1)
+                
+              self.tableView(tblData, viewForHeaderInSection: indexPathArray[0].section)
+            
 
                 self.tblData.deleteRowsAtIndexPaths(indexPathArray, withRowAnimation: UITableViewRowAnimation.Top)
                 
+                //self.tblData.reloadData()
+                
             }
+            sender.setTitle("Hide", forState: UIControlState.Normal)
+
             array.append(sender.tag)
             var indexPathArray = [NSIndexPath]()
             
@@ -370,6 +389,8 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 indexPathArray.append(indexPath)
                 
             }
+            
+            
             
             self.tblData.insertRowsAtIndexPaths(indexPathArray, withRowAnimation: UITableViewRowAnimation.Top)
         }

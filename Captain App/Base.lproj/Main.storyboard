@@ -294,9 +294,9 @@
                                                             </constraints>
                                                             <state key="normal" backgroundImage="plus_button"/>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7W-bI-DdZ">
-                                                            <rect key="frame" x="10" y="26" width="144" height="21"/>
-                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7W-bI-DdZ">
+                                                            <rect key="frame" x="10" y="14.5" width="191" height="33.5"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -309,10 +309,10 @@
                                                             <state key="normal" backgroundImage="rem_button"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkE-n4-XG3">
-                                                            <rect key="frame" x="10" y="4" width="144" height="21"/>
+                                                            <rect key="frame" x="10" y="0.0" width="144" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="144" id="2mh-h6-CJ3"/>
-                                                                <constraint firstAttribute="height" constant="21" id="3vo-jD-iBd"/>
+                                                                <constraint firstAttribute="height" constant="14" id="3vo-jD-iBd"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -335,17 +335,17 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="U2t-9M-vHH" secondAttribute="bottom" constant="8" id="02b-Hj-TAA"/>
-                                                        <constraint firstItem="JkE-n4-XG3" firstAttribute="top" secondItem="kvy-7T-yUh" secondAttribute="top" constant="4" id="3hj-rY-QaG"/>
+                                                        <constraint firstItem="JkE-n4-XG3" firstAttribute="top" secondItem="kvy-7T-yUh" secondAttribute="top" id="3hj-rY-QaG"/>
                                                         <constraint firstItem="U2t-9M-vHH" firstAttribute="leading" secondItem="kvy-7T-yUh" secondAttribute="leadingMargin" id="6aA-Ju-Ql5"/>
                                                         <constraint firstItem="D7W-bI-DdZ" firstAttribute="leading" secondItem="kvy-7T-yUh" secondAttribute="leading" constant="10" id="AnP-T6-UoY"/>
-                                                        <constraint firstItem="D7W-bI-DdZ" firstAttribute="height" secondItem="JkE-n4-XG3" secondAttribute="height" id="GeQ-iM-ths"/>
-                                                        <constraint firstItem="EOE-E6-i6R" firstAttribute="firstBaseline" secondItem="D7W-bI-DdZ" secondAttribute="firstBaseline" constant="-3" id="IDa-S6-aCv"/>
+                                                        <constraint firstItem="D7W-bI-DdZ" firstAttribute="height" secondItem="JkE-n4-XG3" secondAttribute="height" constant="19.5" id="GeQ-iM-ths"/>
+                                                        <constraint firstItem="EOE-E6-i6R" firstAttribute="firstBaseline" secondItem="D7W-bI-DdZ" secondAttribute="firstBaseline" constant="9.5" id="IDa-S6-aCv"/>
                                                         <constraint firstItem="JkE-n4-XG3" firstAttribute="leading" secondItem="kvy-7T-yUh" secondAttribute="leading" constant="10" id="bJV-Kd-HCH"/>
-                                                        <constraint firstItem="EOE-E6-i6R" firstAttribute="baseline" secondItem="D7W-bI-DdZ" secondAttribute="baseline" constant="-3" id="cBO-Wc-V2x"/>
+                                                        <constraint firstItem="EOE-E6-i6R" firstAttribute="baseline" secondItem="D7W-bI-DdZ" secondAttribute="baseline" constant="-4.5" id="cBO-Wc-V2x"/>
                                                         <constraint firstAttribute="trailing" secondItem="U2t-9M-vHH" secondAttribute="trailing" constant="5" id="dpj-GF-hJv"/>
-                                                        <constraint firstItem="JkE-n4-XG3" firstAttribute="width" secondItem="D7W-bI-DdZ" secondAttribute="width" id="o6T-vN-U7P"/>
+                                                        <constraint firstItem="JkE-n4-XG3" firstAttribute="width" secondItem="D7W-bI-DdZ" secondAttribute="width" constant="-47" id="o6T-vN-U7P"/>
                                                         <constraint firstAttribute="trailing" secondItem="B5x-zX-Cwo" secondAttribute="trailing" constant="5" id="oHm-5a-Xwa"/>
-                                                        <constraint firstItem="D7W-bI-DdZ" firstAttribute="top" secondItem="JkE-n4-XG3" secondAttribute="bottom" constant="1" id="oOr-Iq-9bp"/>
+                                                        <constraint firstItem="D7W-bI-DdZ" firstAttribute="top" secondItem="JkE-n4-XG3" secondAttribute="bottom" constant="0.5" id="oOr-Iq-9bp"/>
                                                         <constraint firstItem="U2t-9M-vHH" firstAttribute="top" secondItem="EOE-E6-i6R" secondAttribute="bottom" constant="7.5" id="r8G-bb-ap5"/>
                                                         <constraint firstItem="B5x-zX-Cwo" firstAttribute="leading" secondItem="EOE-E6-i6R" secondAttribute="trailing" constant="11" id="rq9-Ha-DCK"/>
                                                         <constraint firstItem="EOE-E6-i6R" firstAttribute="leading" secondItem="EpG-g0-tBD" secondAttribute="trailing" constant="8" id="uPa-BN-cNT"/>
