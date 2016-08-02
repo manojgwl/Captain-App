@@ -24,10 +24,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
         self.txtWaiterid.delegate = self
         
         let placeholder = NSAttributedString(string: "Waiter ID", attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
+        
         self.txtWaiterid.attributedPlaceholder = placeholder;
 
        // self.navigationController?.navigationBar.hidden=true
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func viewWillDisappear(animated: Bool) {

@@ -41,47 +41,47 @@ class Utility: NSObject {
         Cview.addSubview(Applabel)
         
         
-    
-    let view = UIView(frame: CGRectMake(0, 0, 130, 44))
-    view.backgroundColor = UIColor.clearColor()
-    let barButtonItem = UIBarButtonItem(customView: view)
-    
-    
-    let appFrame = CGRect(x: 10, y: 0, width: 80, height: 44)
-    
-    let  locLabel = UILabel(frame: appFrame)
-    locLabel.text = "Bangalore"
-    locLabel.textColor=Utility.hexStringToUIColor("#c2863d")
-    locLabel.font = UIFont(name: "Avenir Book", size: 14.0)
-    
-    view.addSubview(locLabel)
-    
-    
-
-   let locImFrame = CGRect(x:  locLabel.frame.origin.x+locLabel.frame.width, y: 15, width: 10, height: 15)
-
-    
-   let imgLocation = UIImageView(frame: locImFrame)
-    
-    imgLocation.image = UIImage(named: "Marker_Filled_100")
-    
-    view.addSubview(imgLocation)
-
-    
-    let cartImFrame = CGRect(x: imgLocation.frame.origin.x+imgLocation.frame.width+10, y: 15, width: 20, height: 15)
-   
-   let btnCart = UIButton(frame: cartImFrame)
-    
-   btnCart.setImage(UIImage(named: "Shopping_Cart_Filled_100"), forState: UIControlState.Normal)
-    
-    view.addSubview(btnCart)
-
-    
-    navigationbar.rightBarButtonItem = barButtonItem
-
-    navigationbar.leftBarButtonItem = LbarButtonItem
-
-    
+        
+        let view = UIView(frame: CGRectMake(0, 0, 130, 44))
+        view.backgroundColor = UIColor.clearColor()
+        let barButtonItem = UIBarButtonItem(customView: view)
+        
+        
+        let appFrame = CGRect(x: 10, y: 0, width: 80, height: 44)
+        
+        let  locLabel = UILabel(frame: appFrame)
+        locLabel.text = "Bangalore"
+        locLabel.textColor=Utility.hexStringToUIColor("#c2863d")
+        locLabel.font = UIFont(name: "Avenir Book", size: 14.0)
+        
+        view.addSubview(locLabel)
+        
+        
+        
+        let locImFrame = CGRect(x:  locLabel.frame.origin.x+locLabel.frame.width, y: 15, width: 10, height: 15)
+        
+        
+        let imgLocation = UIImageView(frame: locImFrame)
+        
+        imgLocation.image = UIImage(named: "Marker_Filled_100")
+        
+        view.addSubview(imgLocation)
+        
+        
+        let cartImFrame = CGRect(x: imgLocation.frame.origin.x+imgLocation.frame.width+10, y: 15, width: 20, height: 15)
+        
+        let btnCart = UIButton(frame: cartImFrame)
+        
+        btnCart.setImage(UIImage(named: "Shopping_Cart_Filled_100"), forState: UIControlState.Normal)
+        
+        view.addSubview(btnCart)
+        
+        
+        navigationbar.rightBarButtonItem = barButtonItem
+        
+        navigationbar.leftBarButtonItem = LbarButtonItem
+        
+        
     }
 
    

@@ -17,8 +17,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var waiterID: String!
     var arrayResponse:NSMutableArray=NSMutableArray()
     var array = [-1]
-
-   
+    var IsEdit:Bool=false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,39 +26,28 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         self.title="RESTAURANT CAPTAIN"
         self.automaticallyAdjustsScrollViewInsets=false
         
-
-        
-
         let logout = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: #selector(logoutTapped))
         let coloor = Utility.hexStringToUIColor("#C9B059")
         
         self.view.backgroundColor=Utility.hexStringToUIColor("#1c333d")
         
         if let font = UIFont (name: "Merriweather", size: 18) {
-            //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font,NSForegroundColorAttributeName: UIColor.whiteColor()]
             
             logout.setTitleTextAttributes([NSFontAttributeName: font,NSForegroundColorAttributeName:coloor], forState: .Normal)
-
-            
         }
         
         let view = UIView.init(frame: CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height))
         view.backgroundColor = Utility.hexStringToUIColor("#1c333d")
         self.tblData.backgroundView = view
-
-        
         navigationItem.rightBarButtonItems = [logout]
         let nc = NSNotificationCenter.defaultCenter()
         nc.addObserver(self, selector: #selector(refreshOrders), name: "getOrder", object: nil)
-
-        
-
-        
     }
     
     func refreshOrders()   {
       self.getOrders()
     }
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -145,7 +133,6 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let  headerCell = tableView.dequeueReusableCellWithIdentifier("cell") as! OrdersCell
-        headerCell.btnUpdate!.setTitle("View", forState: UIControlState.Normal)
 
         headerCell.btnUpdate!.addTarget(self, action:#selector(self.buttonClicked(_:)), forControlEvents: .TouchUpInside)
         headerCell.btnDelete!.addTarget(self, action:#selector(self.deleteClicked(_:)), forControlEvents: .TouchUpInside)
@@ -153,6 +140,8 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         headerCell.btnDelete?.tag=section
         headerCell.btnUpdate?.tag=section
         headerCell.btnEDit?.tag=section
+        
+       
        // headerCell.contentView.backgroundColor=UIColor.whiteColor()
         
         let dateAsString = arrayResponse.objectAtIndex(section).valueForKey("ORDERS_TIME")as! String
@@ -179,7 +168,10 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
 
         headerCell.viewBG!.layer.cornerRadius = 3.0
-        
+        if(array.contains(section))
+        {
+            headerCell.btnUpdate?.setTitle("Hide", forState: UIControlState.Normal)
+        }
  
         return headerCell.contentView
     }
@@ -330,8 +322,8 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func buttonClicked(sender:UIButton)  {
         
         if array.contains(sender.tag){
-            
             sender.setTitle("View", forState: UIControlState.Normal)
+
             array.removeObjectsInArray([sender.tag])
             //array.removeAll()
             var indexPathArray = [NSIndexPath]()
@@ -350,35 +342,15 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             if(array.count>1){
                 
-                
-                var indexPathArray = [NSIndexPath]()
-                let myNewName = NSMutableArray(array:array)
-                let object=myNewName.lastObject as! Int
 
-                let count=arrayResponse.objectAtIndex(object).valueForKey("items")?.count
-                for var i = 0; i < count; i += 1 {
-                    let indexPath = NSIndexPath(forRow: i, inSection: object)
-                    indexPathArray.append(indexPath)
-                 
-                    
-
-                    
-                }
-                
      
                 
-                array.removeAll()
+               array.removeAll()
                 array.append(-1)
-                
-              self.tableView(tblData, viewForHeaderInSection: indexPathArray[0].section)
-            
-
-                self.tblData.deleteRowsAtIndexPaths(indexPathArray, withRowAnimation: UITableViewRowAnimation.Top)
-                
-                //self.tblData.reloadData()
+                self.tblData.reloadData()
+ 
                 
             }
-            sender.setTitle("Hide", forState: UIControlState.Normal)
 
             array.append(sender.tag)
             var indexPathArray = [NSIndexPath]()
@@ -390,9 +362,14 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
             }
             
-            
+
             
             self.tblData.insertRowsAtIndexPaths(indexPathArray, withRowAnimation: UITableViewRowAnimation.Top)
+            
+            
+            sender.setTitle("Hide", forState: UIControlState.Normal)
+
+
         }
 }
     
@@ -417,7 +394,7 @@ class MyordersViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     if(response.valueForKey("status")as! NSString == "1"){
                         self.arrayResponse=response.valueForKey("records") as! NSMutableArray
                         
-                        print(self.arrayResponse)
+                        Datamodel.sharedInstance.hidehud(self.view)
                         
                         self.tblData.delegate = self
                         self.tblData.dataSource = self

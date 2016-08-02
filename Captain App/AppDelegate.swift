@@ -142,6 +142,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let nc = NSNotificationCenter.defaultCenter()
             nc.postNotificationName("getOrder", object: nil)
         }
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.postNotificationName("getOrder", object: nil)
     
     }
     
